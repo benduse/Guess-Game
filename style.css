@@ -1,13 +1,22 @@
 html {
         font-family: sans-serif;
+        background-color:#8d9a99;
       }
 
 body {
-        width: 50%;
-        max-width: 800px;
-        min-width: 480px;
+        width: 600px;
         margin: 0 auto;
+        background-color: #a38d6e;
+        padding: 0 20px 20px 20px;
+        border: 5px solid black;
+        display: block;
       }
+      
+h1 {
+    margin: 0;
+    color:#00539F;
+    text-shadow: 3px 3px 1px rgb(17, 21, 18);
+}
       
 .form input[type="number"] {
         width: 200px;
@@ -17,3 +26,7 @@ body {
         color: white;
         padding: 3px;
       }
+li {
+    color:#00539F;
+    text-shadow: 1px 1px 1px red;
+}
