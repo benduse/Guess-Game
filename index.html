@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
     <title>Number guessing game</title>
 
@@ -88,6 +91,36 @@ function checkGuess() {
   guessCount++;
   guessField.value = "";
   guessField.focus();
+}
+
+
+function setGameOver() {
+  guessField.disabled = true;
+  guessSubmit.disabled = true;
+  resetButton = document.createElement ("button");
+  resetButton.textContent = "Start new game";
+  document.body.append(resetButton);
+  resetButton.addEventListener("click", resetGame);
+}
+
+function resetGame() {
+  guessCount = 1;
+
+  const resetParas = document.querySelectorAll(".resultParas p");
+  for (const resetPara of resetParas) {
+    resetPara.textContent = "";
+  }
+
+  resetButton.parentNode.removeChild(resetButton);
+
+  guessField.disabled = false;
+  guessSubmit.disabled = false;
+  guessField.value = "";
+  guessField.focus();
+
+  lastResult.style.backgroundColor = "white";
+
+  randomNumber = Math.floor(Math.random() * 100) + 1;
 }
 guessSubmit.addEventListener("click", checkGuess);
 
